@@ -47,6 +47,7 @@
         "condition_variable": "cpp",
         "list": "cpp",
         "functional": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "future": "cpp"
     }
 }

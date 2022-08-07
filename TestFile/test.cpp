@@ -1,23 +1,26 @@
-#include <functional>
-#include <iostream>
-#include <type_traits>
-#include <utility>
+#include<future>
+#include<iostream>
+#include<thread>
+using namespace std;
 
-struct Default {
-    int foo() const { return 1; }
+int find_answer_to_ltuae(){
+    return 100;
+}
+void do_other_stuff(){
+    std::cout<<"do_other_stuff ing......"<<std::endl;
+}
+
+class Widget{
+public:
+    static int print(){
+        cout<<"Widget::print()!"<<std::endl;
+        return 10;
+    }
+    int a;
 };
 
-struct NonDefault {
-    NonDefault() = delete;
-    int foo() const { return 1; }
-};
 
-int main() {
-    decltype(Default().foo()) n1 = 1; // n1 的类型是 int
-    //  decltype(NonDefault().foo()) n2 = n1;               // 错误：无默认构造函数
-    decltype(std::declval<NonDefault>().foo()) n2 = n1; // n2 的类型是 int
-    std::cout << "n1 = " << n1 << '\n'
-              << "n2 = " << n2 << '\n';
-    Default d;
-    std::__invoke(&Default::foo, &d);
+auto main()->int{
+    Widget w;
+    std::future f = std::async(&Widget::print);
 }
