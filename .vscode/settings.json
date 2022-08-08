@@ -48,6 +48,15 @@
         "list": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "bit": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "set": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp"
     }
 }
